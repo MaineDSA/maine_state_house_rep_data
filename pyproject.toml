@@ -26,7 +26,18 @@ dev = [
     "types-tqdm==4.67.0.20250809"
 ]
 
+[project.scripts]
+maine_state_house_rep_data = "src.main:main"
+
+[build-system]
+requires = ["setuptools>=80.0"]
+build-backend = "setuptools.build_meta"
+
 [tool]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
 
 [tool.ruff]
 line-length = 160
