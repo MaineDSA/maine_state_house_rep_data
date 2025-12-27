@@ -26,6 +26,9 @@ dev = [
     "types-tqdm==4.67.0.20250809"
 ]
 
+[project.scripts]
+maine_state_house_rep_data = "maine_state_house_rep_data:main"
+
 [tool]
 
 [tool.ruff]

@@ -6,7 +6,7 @@ import urllib3
 from bs4 import BeautifulSoup
 
 from src.legislature_urls import LegislatureURL
-from src.main import (
+from src.maine_state_house_rep_data import (
     collect_municipality_data,
     extract_legislator_from_string,
     get_most_common_url,
@@ -38,7 +38,7 @@ def mock_http_response(mock_http: MagicMock) -> Callable:
 @pytest.fixture
 def mock_house_url() -> Generator[LegislatureURL]:
     """Mock HouseURL configuration."""
-    with patch("src.main.HouseURL") as mock_url:
+    with patch("src.legislature_urls.HouseURL") as mock_url:
         mock_url.StateLegislatureNetloc = "leg.maine.gov"
         mock_url.MunicipalityListPath = "/municipalities"
         yield mock_url
