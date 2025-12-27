@@ -38,7 +38,7 @@ def mock_http_response(mock_http: MagicMock) -> Callable:
 @pytest.fixture
 def mock_house_url() -> Generator[LegislatureURL]:
     """Mock HouseURL configuration."""
-    with patch("src.main.HouseURL") as mock_url:
+    with patch("src.legislature_urls.HouseURL") as mock_url:
         mock_url.StateLegislatureNetloc = "leg.maine.gov"
         mock_url.MunicipalityListPath = "/municipalities"
         yield mock_url
