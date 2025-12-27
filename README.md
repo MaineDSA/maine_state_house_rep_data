@@ -14,26 +14,26 @@ Maine state house reps by district and town.
 
 1. Install maine_state_house_rep_data.
 
-  ```
-  uv pip install .
-  ```
+    ```
+    uv pip install .
+    ```
 
-  or without uv...
+    or without uv...
 
-  ```
-  pip install .
-  ```
+    ```
+    pip install .
+    ```
 
 1. Run maine_state_house_rep_data.
 
-  ```
-  uv run maine_state_house_rep_data
-  ```
+    ```
+    uv run maine_state_house_rep_data
+    ```
 
-  or without uv...
+    or without uv...
 
-  ```
-  maine_state_house_rep_data
-  ```
+    ```
+    maine_state_house_rep_data
+    ```
 
 The program will begin running and display its progress. Upon completion, the program will output a `house_municipality_data.csv` file containing the data and will overwrite any existing files.
