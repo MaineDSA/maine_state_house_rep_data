@@ -9,7 +9,7 @@ urls = { "GitHub" = "https://github.com/MaineDSA/maine_state_legislator_data" }
 dependencies = [
     "beautifulsoup4==4.14.3",
     "tqdm==4.67.1",
-    "urllib3==2.6.0",
+    "urllib3==2.6.2",
 ]
 
 [project.optional-dependencies]
