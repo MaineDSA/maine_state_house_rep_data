@@ -227,6 +227,10 @@ def main() -> None:
         all_municipalities.extend(legislators)
     logger.info("Found %d municipalities across %d pages", len(all_municipalities), len(letters))
 
+    if not all_municipalities:
+        err_msg = "0 municipalities found."
+        raise Exception(err_msg)
+
     logger.info("Grouping legislators and finding most common URLs...")
     legislator_urls = defaultdict(list)
     legislator_records = defaultdict(list)
@@ -235,6 +239,10 @@ def main() -> None:
         if member and detail_url:
             legislator_urls[member].append(detail_url)
             legislator_records[member].append((district, town, party))
+
+    if not legislator_urls or not legislator_records:
+        err_msg = "0 results found."
+        raise Exception(err_msg)
 
     logger.info("Scraping details for %d unique legislators...", len(legislator_urls))
     legislator_details = {}
