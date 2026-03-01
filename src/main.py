@@ -148,6 +148,11 @@ def collect_municipality_data(http: urllib3.PoolManager, value: str, query: str 
     page_url = urlunparse(("https", HouseURL.StateLegislatureNetloc, HouseURL.MunicipalityListPath, "", urlencode({query: value}), ""))
     logger.debug("Getting legislators list from URL: %s", page_url)
     response = http.request("GET", page_url)
+
+    if response.status != 200:  # noqa: PLR2004 magic value
+        err_msg = f"Failed to retrieve data for {urlencode({query: value})}. Status code: {response.status}"
+        raise Exception(err_msg)
+
     soup = BeautifulSoup(response.data, "html.parser")
 
     table_tag = soup.find("table", class_="short-table white")
@@ -221,15 +226,12 @@ def main() -> None:
 
     logger.info("Collecting municipality data from all pages...")
     letters = get_pagination(http)
+    logger.info("Found %d alphabetical index pages", len(letters))
     all_municipalities = []
     for letter in tqdm(letters, unit="page", desc="Collecting data"):
         legislators = collect_municipality_data(http, letter)
         all_municipalities.extend(legislators)
-    logger.info("Found %d municipalities across %d pages", len(all_municipalities), len(letters))
-
-    if not all_municipalities:
-        err_msg = "0 municipalities found."
-        raise Exception(err_msg)
+    logger.info("Found %d municipalities across all pages", len(all_municipalities))
 
     logger.info("Grouping legislators and finding most common URLs...")
     legislator_urls = defaultdict(list)
