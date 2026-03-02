@@ -30,7 +30,7 @@ jobs:
                   cache: pip
 
             - name: Install uv
-              uses: install-pinned/uv@0590ea0c73b1fdb765847c94975e71c97d9ad0b1
+              uses: install-pinned/uv@4d66dd6355704140c330bc2a2e6291cbf3bcb67f
 
             - name: Install module and dependencies
               run: |
