@@ -12,26 +12,48 @@ dependencies = [
     "urllib3~=2.6.0",
 ]
 
-[project.optional-dependencies]
-dev = [
-    "bandit[sarif]==1.9.1",
-    "mypy~=1.19.0",
-    "pre-commit~=4.5.0",
-    "pytest-cov~=7.0.0",
-    "pytest-xdist~=3.8.0",
-    "pytest~=9.0.1",
-    "ruff==0.14.6",
-    "ssort==0.15.0",
-    "types-beautifulsoup4~=4.12.0.20250516",
-    "types-tqdm~=4.67.3.20260205"
-]
-
 [project.scripts]
 maine_state_house_rep_data = "src.main:main"
 
 [build-system]
-requires = ["setuptools>=80.0"]
+requires = [
+    "build>=1.4",
+    "setuptools>=82.0",
+]
 build-backend = "setuptools.build_meta"
+
+[dependency-groups]
+dev = [
+    {include-group = "lint"},
+    {include-group = "pre-commit"},
+    {include-group = "security"},
+    {include-group = "test-coverage"},
+    {include-group = "types"},
+]
+lint = [
+    "ruff==0.15.1",
+    "ssort==0.16.0",
+]
+pre-commit = [
+    "pre-commit~=4.5.0",
+]
+security = [
+    "bandit[sarif]==1.9.3",
+]
+test-coverage = [
+    "pytest-cov~=7.0.0",
+    {include-group = "test"},
+]
+test = [
+    "pytest~=9.0.2",
+    "pytest-recording~=0.13.4",
+    "pytest-xdist~=3.8.0",
+]
+types = [
+    "mypy~=1.19.0",
+    "types-beautifulsoup4~=4.12.0.20250516",
+    "types-tqdm~=4.67.3.20260205"
+]
 
 [tool]
 
