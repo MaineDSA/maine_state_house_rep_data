@@ -90,6 +90,9 @@ def scrape_detailed_legislator_info(http: urllib3.PoolManager, path: str, url: s
 
     committees = scrape_committees(soup)
 
+    if not all((email, phone, committees)):
+        logger.error("%s: %s, %s, %s", path, email, phone, committees)
+
     return email, phone, committees
 
 
@@ -202,7 +205,7 @@ def main() -> None:
             legislator_urls[member].append(detail_url)
 
     logger.info("Scraping details for %d unique legislators...", len(legislator_urls))
-    legislator_details = defaultdict(tuple)
+    legislator_details = {}
     try:
         for member, urls in tqdm(legislator_urls.items(), unit="rep"):
             most_common_url = Counter(urls).most_common(1)[0][0]
@@ -212,6 +215,8 @@ def main() -> None:
 
     final_data = []
     for district, town, county, member, party, _ in all_municipalities:
+        if member not in legislator_details:
+            continue
         email, phone, committees = legislator_details[member]
         final_data.append((district, town, county, member, party, email, phone, committees))
 
