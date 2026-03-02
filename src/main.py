@@ -51,7 +51,7 @@ def scrape_committees(soup: BeautifulSoup) -> str:
 
         committee_entries.append(f"{name} ({role})")
 
-    return "; ".join(committee_entries)
+    return "; ".join(committee_entries) if committee_entries else "No committee assignments"
 
 
 def scrape_detailed_legislator_info(http: urllib3.PoolManager, path: str, url: str = HouseURL.StateLegislatureNetloc) -> tuple[str, str, str]:
