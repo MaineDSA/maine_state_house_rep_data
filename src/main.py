@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup, PageElement, ResultSet, Tag
 from tqdm import tqdm
 from urllib3.util.retry import Retry
 
-from .legislature_urls import HouseURL
+from src.legislature_urls import HouseURL
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s:maine_state_house_rep_data:%(name)s:%(message)s")
 logger = logging.getLogger(__name__)
