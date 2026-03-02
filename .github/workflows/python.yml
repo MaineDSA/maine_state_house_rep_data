@@ -14,10 +14,6 @@ permissions: read-all
 jobs:
   lint:
     uses: bmos/bmos/.github/workflows/python-lint.yml@main
-    secrets: inherit
-    with:
-      src_folder: "src"
-      python_version: "3.13"
     permissions:
       contents: write
       security-events: write
@@ -25,10 +21,7 @@ jobs:
   test:
     uses: bmos/bmos/.github/workflows/python-test.yml@main
     needs: lint
-    secrets: inherit
     with:
-      src_folder: "src"
-      test_folder: "tests"
       python_version: "['3.11', '3.12', '3.13', '3.14']"
     permissions:
       contents: write
