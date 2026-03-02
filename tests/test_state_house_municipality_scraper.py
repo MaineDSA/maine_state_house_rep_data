@@ -5,12 +5,12 @@ import pytest
 import urllib3
 from bs4 import BeautifulSoup, Tag
 
-from src.main import collect_all_municipality_data, extract_legislator_info_from_row, scrape_committees, scrape_detailed_legislator_info
+from src.main import collect_all_municipality_data, extract_legislator_info_from_row, parse_committee_html, scrape_detailed_legislator_info
 
 
 @pytest.fixture
-def sample_committee_soup() -> BeautifulSoup:
-    html = """
+def html_content() -> bytes:
+    return b"""
     <div class="list-group">
         <div class="list-group-item">
             <span class="badge">Chair</span>
@@ -25,7 +25,6 @@ def sample_committee_soup() -> BeautifulSoup:
         </div>
     </div>
     """
-    return BeautifulSoup(html, "html.parser")
 
 
 @pytest.fixture
@@ -40,8 +39,8 @@ def mock_sleep() -> Generator[None, None, None]:
         yield
 
 
-def test_scrape_committees_logic(sample_committee_soup: BeautifulSoup) -> None:
-    result = scrape_committees(sample_committee_soup)
+def test_scrape_committees_logic(html_content: bytes) -> None:
+    result = parse_committee_html(html_content)
 
     assert "Appropriations and Financial Affairs (Chair)" in result
     assert "Ethics Committee (Member)" in result
@@ -115,5 +114,5 @@ def test_collect_all_municipality_data_error(mock_http: MagicMock) -> None:
     mock_resp.status = 404
     mock_http.request.return_value = mock_resp
 
-    with pytest.raises(urllib3.exceptions.HTTPError, match=f"Page failed to load with status: {mock_resp.status}"):
+    with pytest.raises(urllib3.exceptions.HTTPError, match=f"Status: {mock_resp.status}"):
         collect_all_municipality_data(mock_http)

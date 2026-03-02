@@ -22,19 +22,20 @@ HTTP_OK = 200
 CSV_NAME = "house_municipality_data.csv"
 
 
-def scrape_committees(soup: BeautifulSoup) -> str:
+def parse_committee_html(html_content: bytes) -> str:
     """
     Extract committee names and roles from the list-group structure.
 
     Args:
-        soup (BeautifulSoup):
-            Legislator detail page as BeautifulSoup object
+        html_content (bytes): Legislator detail page
 
     Returns:
         str:
             'Committee Name (Role); Committee Name (Role)'
 
     """
+    soup = BeautifulSoup(html_content, "html.parser")
+
     committee_entries = []
 
     items = soup.find_all("div", class_="list-group-item")
@@ -88,7 +89,7 @@ def scrape_detailed_legislator_info(http: urllib3.PoolManager, path: str, url: s
     phone_tag = soup.find("a", href=re.compile(r"^tel:"))
     phone = phone_tag.get_text(strip=True) if phone_tag else ""
 
-    committees = scrape_committees(soup)
+    committees = parse_committee_html(response.data)
 
     if not all((email, phone, committees)):
         logger.error("%s: %s, %s, %s", path, email, phone, committees)
@@ -137,11 +138,50 @@ def extract_legislator_info_from_row(row: Tag) -> tuple[str, str, str, str, str,
     return district, town, county, member_name, party, detail_url
 
 
+def parse_municipality_html(html_content: bytes) -> list[tuple[str, str, str, str, str, str]]:
+    """
+    Parse basic municipality data and each legislator's profile page URL(s).
+
+    Args:
+        html_content(bytes): Municipalities list page
+
+    Returns:
+        list[tuple]:
+
+            .. code-block:: python
+
+                [
+                    (district, town, county, member, party, detail_url),
+                    (district, town, county, member, party, detail_url),
+                ]
+
+    """
+    soup = BeautifulSoup(html_content, "html.parser")
+
+    table = soup.find("table", id="alphaTownTable") or soup.find("table")
+    if not table or not isinstance(table, Tag):
+        err_msg = "Could not find the data table"
+        raise Exception(err_msg)
+
+    tbody = table.find("tbody")
+    assert isinstance(tbody, Tag)
+
+    legislators = []
+
+    rows = tbody.find_all("tr")
+    for row in rows:
+        legislator = extract_legislator_info_from_row(row)
+        if legislator:
+            legislators.append(legislator)
+
+    return legislators
+
+
 def collect_all_municipality_data(
     http: urllib3.PoolManager, url: str = HouseURL.StateLegislatureNetloc, path: str = HouseURL.MunicipalityListPath
 ) -> list[tuple[str, str, str, str, str, str]]:
     """
-    Collect basic municipality data and their legislator's profile page URLs.
+    Collect basic municipality data and each legislator's profile page URL(s).
 
     Args:
         http (urllib3.PoolManager):
@@ -165,68 +205,77 @@ def collect_all_municipality_data(
     url = urlunparse(("https", url, path, "", "", ""))
     logger.debug("Getting legislators list from URL: %s", url)
 
-    logger.info("Fetching the municipalities table")
     response = http.request("GET", url)
     if response.status != HTTP_OK:
-        err_msg = f"Page failed to load with status: {response.status}"
+        err_msg = f"Status: {response.status}"
         raise HTTPError(err_msg)
 
-    soup = BeautifulSoup(response.data, "html.parser")
+    return parse_municipality_html(response.data)
 
-    table = soup.find("table", id="alphaTownTable") or soup.find("table")
-    if not table:
-        err_msg = "Could not find the data table"
-        raise Exception(err_msg)
 
-    assert isinstance(table, Tag)
-    table = table.find("tbody")
-    assert isinstance(table, Tag)
-    rows = table.find_all("tr")
-    logger.info("Parsing %d rows from the municipalities table", len(rows))
+def resolve_unique_legislators(all_municipalities: list[tuple]) -> dict[str, str]:
+    legislator_urls = defaultdict(list)
+    for _, _, _, member, _, detail_url in all_municipalities:
+        if member and detail_url:
+            legislator_urls[member].append(detail_url)
 
-    legislators = []
-    for row in rows:
-        legislator = extract_legislator_info_from_row(row)
-        if legislator:
-            legislators.append(legislator)
+    return {member: Counter(urls).most_common(1)[0][0] for member, urls in legislator_urls.items()}
 
-    return legislators
+
+def merge_legislator_data(all_municipalities: list[tuple[str, str, str, str, str, str]], legislator_details: dict[str, tuple[str, str, str]]) -> list[tuple]:
+    final_data = []
+
+    for district, town, county, member, party, _ in all_municipalities:
+        if member in legislator_details:
+            email, phone, committees = legislator_details[member]
+            final_data.append((district, town, county, member, party, email, phone, committees))
+
+    return final_data
+
+
+def save_to_csv(filename: str, records: list[tuple]) -> None:
+    """
+    Write final dataset to a CSV file.
+
+    Args:
+        filename (str): The path/name of the file to create.
+        records (list[tuple]): The merged municipality and legislator data.
+
+    """
+    headers = ["District", "Town", "County", "Member", "Party", "Email", "Phone", "Committees"]
+
+    try:
+        with Path(filename).open("w", newline="", encoding="utf-8") as csv_file:
+            writer = csv.writer(csv_file)
+            writer.writerow(headers)
+            writer.writerows(records)
+        logger.info("CSV file '%s' has been created successfully.", filename)
+    except OSError as e:
+        logger.error("Failed to write CSV file '%s': %s", filename, e)
+        raise
 
 
 def main() -> None:
     retry_strategy = Retry(total=3, backoff_factor=1, status_forcelist=[429, 500, 502, 503, 504], respect_retry_after_header=True)
     http = urllib3.PoolManager(retries=retry_strategy)
 
-    legislator_urls = defaultdict(list)
-
     all_municipalities = collect_all_municipality_data(http)
-    for _, _, _, member, _, detail_url in all_municipalities:
-        if member and detail_url:
-            legislator_urls[member].append(detail_url)
 
-    logger.info("Scraping details for %d unique legislators...", len(legislator_urls))
-    legislator_details = {}
+    url_map = resolve_unique_legislators(all_municipalities)
+
+    legislator_details: dict[str, tuple[str, str, str]] = {}
+    logger.info("Scraping details for %d unique legislators...", len(legislator_details))
     try:
-        for member, urls in tqdm(legislator_urls.items(), unit="rep"):
-            most_common_url = Counter(urls).most_common(1)[0][0]
-            legislator_details[member] = scrape_detailed_legislator_info(http, most_common_url)
+        for member, best_url in tqdm(url_map.items(), unit="rep"):
+            legislator_details[member] = scrape_detailed_legislator_info(http, best_url)
     except KeyboardInterrupt:
         logger.warning("\nScrape interrupted by user. Saving partial data...")
 
-    final_data = []
-    for district, town, county, member, party, _ in all_municipalities:
-        if member not in legislator_details:
-            continue
-        email, phone, committees = legislator_details[member]
-        final_data.append((district, town, county, member, party, email, phone, committees))
+    final_rows = merge_legislator_data(all_municipalities, legislator_details)
+    logger.info("Total records: %d, Unique legislators: %d", len(final_rows), len(legislator_details))
 
-    with Path(CSV_NAME).open("w", newline="", encoding="utf-8") as csv_file:
-        writer = csv.writer(csv_file)
-        writer.writerow(["District", "Town", "County", "Member", "Party", "Email", "Phone", "Committees"])
-        writer.writerows(final_data)
-
+    save_to_csv(CSV_NAME, final_rows)
     logger.info("CSV file '%s' has been created.", CSV_NAME)
-    logger.info("Total records: %d, Unique legislators: %d", len(final_data), len(legislator_details))
 
 
 if __name__ == "__main__":
