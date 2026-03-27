@@ -31,9 +31,7 @@ jobs:
                   **/pyproject.toml
                   **/uv.lock
     
-            - run: >-
-                uv sync
-                --upgrade
+            - run: uv sync
 
             - name: Run package
               run: maine_state_house_rep_data
