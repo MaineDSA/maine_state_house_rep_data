@@ -36,17 +36,18 @@ def parse_committee_html(html_content: bytes) -> str:
     """
     soup = BeautifulSoup(html_content, "html.parser")
 
-    committee_entries = []
-
     items = soup.find_all("div", class_="list-group-item")
-    for item in items:
-        role_tag = item.find("span", class_="badge")
+    if not items:
+        return "No committee assignments"
 
+    committee_entries = []
+    for item in items:
         name_tag = item.find("h6")
         if not name_tag:
             continue
-
         name = name_tag.get_text(strip=True)
+
+        role_tag = item.find("span", class_="badge")
         role = role_tag.get_text(strip=True) if role_tag else "Member"
         role = "Chair" if "Chair" in role else role
 
