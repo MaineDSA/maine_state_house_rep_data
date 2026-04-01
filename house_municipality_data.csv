@@ -27,7 +27,7 @@ District,Town,County,Member,Party,Email,Phone,Committees
 59,Augusta (Part),Kennebec County,David M. Rollins,D,David.Rollins@legislature.maine.gov,207-287-1400,State and Local Government (Member)
 60,Augusta (Part),Kennebec County,William R. Bridgeo,D,William.Bridgeo@legislature.maine.gov,207-287-1400,Environment and Natural Resources (Member); Inland Fisheries and Wildlife (Member)
 18,Aurora,Hancock County,Mathew David McIntyre,R,Mathew.McIntyre@legislature.maine.gov,207-287-1400,"Engrossed Bills (Ranking Member); Criminal Justice and Public Safety (Member); Energy, Utilities and Technology (Member)"
-74,Avon,Franklin County,Randall C. Hall,R,Randall.Hall@legislature.maine.gov,207-287-1400,
+74,Avon,Franklin County,Randall C. Hall,R,Randall.Hall@legislature.maine.gov,207-287-1400,No committee assignments
 9,Baileyville,Washington County,Arthur Kevin Mingo,R,Arthur.Mingo@legislature.maine.gov,207-287-1400,Housing and Economic Development (Member)
 84,Baldwin,Cumberland County,Mark Walker,R,Mark.Walker@legislature.maine.gov,207-287-1400,Housing and Economic Development (Member)
 8,Bancroft Township,Aroostook County,Tracy L. Quint,R,Tracy.Quint@legislature.maine.gov,207-287-1400,Taxation (Member)
@@ -79,8 +79,8 @@ District,Town,County,Member,Party,Email,Phone,Committees
 82,Brownfield,Oxford County,Nathan J. Wadsworth,R,Nathan.Wadsworth@legislature.maine.gov,207-287-1400,"Bills in the Second Reading (Member); Energy, Utilities and Technology (Member)"
 30,Brownville,Piscataquis County,James Lee White,R,James.White@legislature.maine.gov,207-287-1400,Transportation (Member)
 31,Brownville,Piscataquis County,Chad R. Perkins,R,Chad.Perkins@legislature.maine.gov,207-287-1400,Government Oversight Committee (Ranking Member); Criminal Justice and Public Safety (Member)
-100,Brunswick (Part),Cumberland County,Daniel J. Ankeles,D,Daniel.Ankeles@legislature.maine.gov,207-287-1400,Environment and Natural Resources (Member); Transportation (Member)
 99,Brunswick (Part),Cumberland County,Cheryl A. Golek,D,Cheryl.Golek@legislature.maine.gov,207-287-1400,Housing and Economic Development (Member); Marine Resources (Member)
+100,Brunswick (Part),Cumberland County,Daniel J. Ankeles,D,Daniel.Ankeles@legislature.maine.gov,207-287-1400,Environment and Natural Resources (Member); Transportation (Member)
 101,Brunswick (Part),Cumberland County,Poppy Arford,D,Poppy.Arford@legislature.maine.gov,207-287-1400,"Health Coverage, Insurance and Financial Services (Member)"
 80,Buckfield,Oxford County,Caldwell Jackson,R,Caldwell.Jackson@legislature.maine.gov,207-287-1400,"Agriculture, Conservation and Forestry (Member)"
 17,Bucksport,Hancock County,Steven M. Bishop,R,Steven.Bishop@legislature.maine.gov,207-287-1400,Transportation (Member)
@@ -102,7 +102,7 @@ District,Town,County,Member,Party,Email,Phone,Committees
 73,Carrabassett Valley,Franklin County,Michael Soboleski,R,Michael.Soboleski@legislature.maine.gov,207-287-1400,Environment and Natural Resources (Member); Labor (Member)
 8,Carroll,Penobscot County,Tracy L. Quint,R,Tracy.Quint@legislature.maine.gov,207-287-1400,Taxation (Member)
 73,Carrying Place Township,Somerset County,Michael Soboleski,R,Michael.Soboleski@legislature.maine.gov,207-287-1400,Environment and Natural Resources (Member); Labor (Member)
-74,Carthage,Franklin County,Randall C. Hall,R,Randall.Hall@legislature.maine.gov,207-287-1400,
+74,Carthage,Franklin County,Randall C. Hall,R,Randall.Hall@legislature.maine.gov,207-287-1400,No committee assignments
 8,Cary Township,Aroostook County,Tracy L. Quint,R,Tracy.Quint@legislature.maine.gov,207-287-1400,Taxation (Member)
 86,Casco,Cumberland County,Rolf A. Olsen Jr.,R,Rolf.Olsen@legislature.maine.gov,207-287-1400,"Health Coverage, Insurance and Financial Services (Member)"
 16,Castine,Hancock County,Nina Azella Milliken,D,Nina.Milliken@legislature.maine.gov,207-287-1400,Criminal Justice and Public Safety (Member); Elections (Member)
@@ -253,7 +253,7 @@ District,Town,County,Member,Party,Email,Phone,Committees
 7,Houlton,Aroostook County,Gregory Lewis Swallow,R,Gregory.Swallow@legislature.maine.gov,207-287-1400,Taxation (Member)
 28,Howland,Penobscot County,Irene A. Gifford,R,Irene.Gifford@legislature.maine.gov,207-287-1400,Engrossed Bills (Member); Marine Resources (Member)
 27,Hudson,Penobscot County,Gary A. Drinkwater,R,Gary.Drinkwater@legislature.maine.gov,207-287-1400,Labor (Ranking Member)
-74,Industry,Franklin County,Randall C. Hall,R,Randall.Hall@legislature.maine.gov,207-287-1400,
+74,Industry,Franklin County,Randall C. Hall,R,Randall.Hall@legislature.maine.gov,207-287-1400,No committee assignments
 8,Island Falls,Aroostook County,Tracy L. Quint,R,Tracy.Quint@legislature.maine.gov,207-287-1400,Taxation (Member)
 15,Isle au Haut,Knox County,Holly Rae Eaton,D,Holly.Eaton@legislature.maine.gov,207-287-1400,Marine Resources (Member); Transportation (Member)
 40,Islesboro,Waldo County,D. Michael Ray,D,Michael.Ray@legislature.maine.gov,207-287-1400,Transportation (Member)
@@ -291,7 +291,7 @@ District,Town,County,Member,Party,Email,Phone,Committees
 3,Limestone,Aroostook County,Mark Michael Babin,R,Mark.Babin@legislature.maine.gov,207-287-1400,Judiciary (Member)
 138,Limington,York County,Mark John Blier,R,Mark.Blier@legislature.maine.gov,207-287-1400,Appropriations and Financial Affairs (Member)
 28,Lincoln,Penobscot County,Irene A. Gifford,R,Irene.Gifford@legislature.maine.gov,207-287-1400,Engrossed Bills (Member); Marine Resources (Member)
-73,Lincoln,Oxford County,Michael Soboleski,R,Michael.Soboleski@legislature.maine.gov,207-287-1400,Environment and Natural Resources (Member); Labor (Member)
+73,Lincoln Plantation,Oxford County,Michael Soboleski,R,Michael.Soboleski@legislature.maine.gov,207-287-1400,Environment and Natural Resources (Member); Labor (Member)
 40,Lincolnville,Waldo County,D. Michael Ray,D,Michael.Ray@legislature.maine.gov,207-287-1400,Transportation (Member)
 7,Linneus,Aroostook County,Gregory Lewis Swallow,R,Gregory.Swallow@legislature.maine.gov,207-287-1400,Taxation (Member)
 97,Lisbon (Part),Androscoggin County,Richard G. Mason,R,Richard.Mason@legislature.maine.gov,207-287-1400,Bills in the Second Reading (Ranking Member); Inland Fisheries and Wildlife (Ranking Member); Transportation (Member)
@@ -361,13 +361,13 @@ District,Town,County,Member,Party,Email,Phone,Committees
 1,New Canada,Aroostook County,Lucien J.B. Daigle,R,Lucien.Daigle@legislature.maine.gov,207-287-1400,Health and Human Services (Member)
 104,New Gloucester,Cumberland County,Amy Bradstreet Arata,R,Amy.Arata@legislature.maine.gov,207-287-1400,Appropriations and Financial Affairs (Member)
 7,New Limerick,Aroostook County,Gregory Lewis Swallow,R,Gregory.Swallow@legislature.maine.gov,207-287-1400,Taxation (Member)
-74,New Portland,Somerset County,Randall C. Hall,R,Randall.Hall@legislature.maine.gov,207-287-1400,
+74,New Portland,Somerset County,Randall C. Hall,R,Randall.Hall@legislature.maine.gov,207-287-1400,No committee assignments
 58,New Sharon,Franklin County,Sharon C. Frost,U,Sharon.Frost@legislature.maine.gov,207-287-1400,"Agriculture, Conservation and Forestry (Member); Veterans and Legal Affairs (Member)"
 3,New Sweden,Aroostook County,Mark Michael Babin,R,Mark.Babin@legislature.maine.gov,207-287-1400,Judiciary (Member)
-74,New Vineyard,Franklin County,Randall C. Hall,R,Randall.Hall@legislature.maine.gov,207-287-1400,
+74,New Vineyard,Franklin County,Randall C. Hall,R,Randall.Hall@legislature.maine.gov,207-287-1400,No committee assignments
 36,Newburgh,Penobscot County,Kimberly M. Haggan,R,Kimberly.Haggan@legislature.maine.gov,207-287-1400,Education and Cultural Affairs (Member)
 46,Newcastle,Lincoln County,Lydia V. Crafts,D,Lydia.Crafts@legislature.maine.gov,207-287-1400,Elections (Chair); Transportation (Chair)
-141,Newfield,York County,Lucas John Lanigan,R,Lucas.Lanigan@legislature.maine.gov,207-287-1400,
+141,Newfield,York County,Lucas John Lanigan,R,Lucas.Lanigan@legislature.maine.gov,207-287-1400,No committee assignments
 33,Newport,Penobscot County,Kenneth Wade Fredette,R,Kenneth.Fredette@legislature.maine.gov,207-287-1400,Appropriations and Financial Affairs (Member)
 73,Newry,Oxford County,Michael Soboleski,R,Michael.Soboleski@legislature.maine.gov,207-287-1400,Environment and Natural Resources (Member); Labor (Member)
 46,Nobleboro,Lincoln County,Lydia V. Crafts,D,Lydia.Crafts@legislature.maine.gov,207-287-1400,Elections (Chair); Transportation (Chair)
@@ -433,8 +433,8 @@ District,Town,County,Member,Party,Email,Phone,Committees
 53,Pittston,Kennebec County,Michael H. Lemelin,R,Michael.Lemelin@legislature.maine.gov,207-287-1400,Health and Human Services (Ranking Member); Government Oversight Committee (Member)
 72,Pleasant Ridge,Somerset County,Elizabeth M. Caruso,R,Elizabeth.Caruso@legislature.maine.gov,207-287-1400,Judiciary (Member); Leaves of Absence (Member)
 33,Plymouth,Penobscot County,Kenneth Wade Fredette,R,Kenneth.Fredette@legislature.maine.gov,207-287-1400,Appropriations and Financial Affairs (Member)
-86,Poland (Part),Androscoggin County,Rolf A. Olsen Jr.,R,Rolf.Olsen@legislature.maine.gov,207-287-1400,"Health Coverage, Insurance and Financial Services (Member)"
 87,Poland (Part),Androscoggin County,David W. Boyer Jr.,R,David.Boyer@legislature.maine.gov,207-287-1400,Veterans and Legal Affairs (Ranking Member); Elections (Member)
+86,Poland (Part),Androscoggin County,Rolf A. Olsen Jr.,R,Rolf.Olsen@legislature.maine.gov,207-287-1400,"Health Coverage, Insurance and Financial Services (Member)"
 1,Portage Lake,Aroostook County,Lucien J.B. Daigle,R,Lucien.Daigle@legislature.maine.gov,207-287-1400,Health and Human Services (Member)
 82,Porter,Oxford County,Nathan J. Wadsworth,R,Nathan.Wadsworth@legislature.maine.gov,207-287-1400,"Bills in the Second Reading (Member); Energy, Utilities and Technology (Member)"
 117,Portland (Part),Cumberland County,Matt Moonen,D,Matt.Moonen@legislature.maine.gov,207-287-1400,Joint Select Committee on Joint Rules (Chair); Rules and Business of the House (Member)
@@ -473,7 +473,7 @@ District,Town,County,Member,Party,Email,Phone,Committees
 18,Sakon Township,Washington County,Mathew David McIntyre,R,Mathew.McIntyre@legislature.maine.gov,207-287-1400,"Engrossed Bills (Ranking Member); Criminal Justice and Public Safety (Member); Energy, Utilities and Technology (Member)"
 73,Salem Township,Franklin County,Michael Soboleski,R,Michael.Soboleski@legislature.maine.gov,207-287-1400,Environment and Natural Resources (Member); Labor (Member)
 73,Sandy River,Franklin County,Michael Soboleski,R,Michael.Soboleski@legislature.maine.gov,207-287-1400,Environment and Natural Resources (Member); Labor (Member)
-141,Sanford (Part),York County,Lucas John Lanigan,R,Lucas.Lanigan@legislature.maine.gov,207-287-1400,
+141,Sanford (Part),York County,Lucas John Lanigan,R,Lucas.Lanigan@legislature.maine.gov,207-287-1400,No committee assignments
 143,Sanford (Part),York County,Ann Fredericks,R,Ann.Fredericks@legislature.maine.gov,207-287-1400,Health and Human Services (Member); Leaves of Absence (Member); Veterans and Legal Affairs (Member)
 142,Sanford (Part),York County,Anne-Marie Mastraccio,D,Anne-Marie.Mastraccio@legislature.maine.gov,207-287-1400,"Government Oversight Committee (Chair); Health Coverage, Insurance and Financial Services (Member)"
 30,Sangerville,Piscataquis County,James Lee White,R,James.White@legislature.maine.gov,207-287-1400,Transportation (Member)
@@ -487,7 +487,7 @@ District,Town,County,Member,Party,Email,Phone,Committees
 28,Seboeis,Penobscot County,Irene A. Gifford,R,Irene.Gifford@legislature.maine.gov,207-287-1400,Engrossed Bills (Member); Marine Resources (Member)
 72,Seboomook Lake,Somerset County,Elizabeth M. Caruso,R,Elizabeth.Caruso@legislature.maine.gov,207-287-1400,Judiciary (Member); Leaves of Absence (Member)
 16,Sedgwick,Hancock County,Nina Azella Milliken,D,Nina.Milliken@legislature.maine.gov,207-287-1400,Criminal Justice and Public Safety (Member); Elections (Member)
-141,Shapleigh,York County,Lucas John Lanigan,R,Lucas.Lanigan@legislature.maine.gov,207-287-1400,
+141,Shapleigh,York County,Lucas John Lanigan,R,Lucas.Lanigan@legislature.maine.gov,207-287-1400,No committee assignments
 8,Sherman,Aroostook County,Tracy L. Quint,R,Tracy.Quint@legislature.maine.gov,207-287-1400,Taxation (Member)
 30,Shirley,Piscataquis County,James Lee White,R,James.White@legislature.maine.gov,207-287-1400,Transportation (Member)
 61,Sidney (Part),Kennebec County,Alicia Collins,R,Alicia.Collins@legislature.maine.gov,207-287-1400,Labor (Member); Leaves of Absence (Member)
@@ -503,7 +503,7 @@ District,Town,County,Member,Party,Email,Phone,Committees
 149,South Berwick (Part),York County,Tiffany Roberts,D,Tiffany.Roberts@legislature.maine.gov,207-287-1400,Inland Fisheries and Wildlife (Chair)
 150,South Berwick (Part),York County,Michele Meyer,D,Michele.Meyer@legislature.maine.gov,207-287-1400,Health and Human Services (Chair)
 48,South Bristol,Lincoln County,Holly B. Stover,D,Holly.Stover@legislature.maine.gov,207-287-1400,Appropriations and Financial Affairs (Member); Ethics (Member); Government Oversight Committee (Member)
-74,South Franklin,Franklin County,Randall C. Hall,R,Randall.Hall@legislature.maine.gov,207-287-1400,
+74,South Franklin,Franklin County,Randall C. Hall,R,Randall.Hall@legislature.maine.gov,207-287-1400,No committee assignments
 81,South Oxford,Oxford County,Peter Conley Wood,R,Peter.Wood@legislature.maine.gov,207-287-1400,Marine Resources (Member)
 122,South Portland (Part),Cumberland County,Matthew D. Beck,D,Matthew.Beck@legislature.maine.gov,207-287-1400,Labor (Member)
 120,South Portland (Part),Cumberland County,Deqa Dhalac,D,Deqa.Dhalac@legislature.maine.gov,207-287-1400,Appropriations and Financial Affairs (Member)
@@ -514,7 +514,7 @@ District,Town,County,Member,Party,Email,Phone,Committees
 15,Southwest Habor,Hancock County,Holly Rae Eaton,D,Holly.Eaton@legislature.maine.gov,207-287-1400,Marine Resources (Member); Transportation (Member)
 8,Springfield,Penobscot County,Tracy L. Quint,R,Tracy.Quint@legislature.maine.gov,207-287-1400,Taxation (Member)
 142,Springvale (Part),York County,Anne-Marie Mastraccio,D,Anne-Marie.Mastraccio@legislature.maine.gov,207-287-1400,"Government Oversight Committee (Chair); Health Coverage, Insurance and Financial Services (Member)"
-141,Springvale (Part),York County,Lucas John Lanigan,R,Lucas.Lanigan@legislature.maine.gov,207-287-1400,
+141,Springvale (Part),York County,Lucas John Lanigan,R,Lucas.Lanigan@legislature.maine.gov,207-287-1400,No committee assignments
 2,Square Lake,Aroostook County,Roger Clarence Albert,R,Roger.Albert@legislature.maine.gov,207-287-1400,Transportation (Member)
 2,St. Agatha,Aroostook County,Roger Clarence Albert,R,Roger.Albert@legislature.maine.gov,207-287-1400,Transportation (Member)
 69,St. Albans,Somerset County,Dean A. Cray,R,dean.cray@legislature.maine.gov,207-287-1400,"Agriculture, Conservation and Forestry (Member); Bills in the Second Reading (Member)"
@@ -532,7 +532,7 @@ District,Town,County,Member,Party,Email,Phone,Committees
 81,Stoneham,Oxford County,Peter Conley Wood,R,Peter.Wood@legislature.maine.gov,207-287-1400,Marine Resources (Member)
 15,Stonington,Hancock County,Holly Rae Eaton,D,Holly.Eaton@legislature.maine.gov,207-287-1400,Marine Resources (Member); Transportation (Member)
 81,Stow,Oxford County,Peter Conley Wood,R,Peter.Wood@legislature.maine.gov,207-287-1400,Marine Resources (Member)
-74,Strong,Franklin County,Randall C. Hall,R,Randall.Hall@legislature.maine.gov,207-287-1400,
+74,Strong,Franklin County,Randall C. Hall,R,Randall.Hall@legislature.maine.gov,207-287-1400,No committee assignments
 12,Sullivan,Hancock County,Billy Bob Faulkingham,R,William.Faulkingham@legislature.maine.gov,207-287-1400,Joint Select Committee on Joint Rules (Ranking Member)
 18,Summit Townships,Penobscot County,Mathew David McIntyre,R,Mathew.McIntyre@legislature.maine.gov,207-287-1400,"Engrossed Bills (Ranking Member); Criminal Justice and Public Safety (Member); Energy, Utilities and Technology (Member)"
 79,Sumner,Oxford County,Michael J. Lance,R,Michael.Lance@legislature.maine.gov,207-287-1400,Inland Fisheries and Wildlife (Member)
@@ -550,7 +550,7 @@ District,Town,County,Member,Party,Email,Phone,Committees
 18,T9 SD TWP,Penobscot County,Mathew David McIntyre,R,Mathew.McIntyre@legislature.maine.gov,207-287-1400,"Engrossed Bills (Ranking Member); Criminal Justice and Public Safety (Member); Energy, Utilities and Technology (Member)"
 8,Talmadge,Washington County,Tracy L. Quint,R,Tracy.Quint@legislature.maine.gov,207-287-1400,Taxation (Member)
 6,TD R2 WELS,Aroostook County,Donald J. Ardell,R,Donald.Ardell@legislature.maine.gov,207-287-1400,Criminal Justice and Public Safety (Member); Engrossed Bills (Member)
-74,Temple,Franklin County,Randall C. Hall,R,Randall.Hall@legislature.maine.gov,207-287-1400,
+74,Temple,Franklin County,Randall C. Hall,R,Randall.Hall@legislature.maine.gov,207-287-1400,No committee assignments
 73,The Forks,Somerset County,Michael Soboleski,R,Michael.Soboleski@legislature.maine.gov,207-287-1400,Environment and Natural Resources (Member); Labor (Member)
 43,Thomaston,Knox County,Ann Higgins Matlack,D,Ann.Matlack@legislature.maine.gov,207-287-1400,Appropriations and Financial Affairs (Member); Taxation (Member)
 38,Thorndike,Waldo County,Benjamin C. Hymes,R,Benjamin.Hymes@legislature.maine.gov,207-287-1400,Veterans and Legal Affairs (Member)
@@ -590,7 +590,7 @@ District,Town,County,Member,Party,Email,Phone,Committees
 65,Waterville (Part),Kennebec County,Cassie Lynn Julia,D,Cassie.Julia@legislature.maine.gov,207-287-1400,Housing and Economic Development (Member); Leaves of Absence (Member)
 91,Wayne,Kennebec County,Joshua K. Morris,R,Joshua.Morris@legislature.maine.gov,207-287-1400,"Elections (Ranking Member); Health Coverage, Insurance and Financial Services (Member)"
 8,Webster,Penobscot County,Tracy L. Quint,R,Tracy.Quint@legislature.maine.gov,207-287-1400,Taxation (Member)
-74,Weld,Franklin County,Randall C. Hall,R,Randall.Hall@legislature.maine.gov,207-287-1400,
+74,Weld,Franklin County,Randall C. Hall,R,Randall.Hall@legislature.maine.gov,207-287-1400,No committee assignments
 30,Wellington,Piscataquis County,James Lee White,R,James.White@legislature.maine.gov,207-287-1400,Transportation (Member)
 146,Wells (Part),York County,Walter Gerard Runte Jr.,D,Gerry.Runte@legislature.maine.gov,207-287-1400,"Energy, Utilities and Technology (Member); Leaves of Absence (Member)"
 145,Wells (Part),York County,Robert A. Foley,R,Robert.Foley@legislature.maine.gov,207-287-1400,"Health Coverage, Insurance and Financial Services (Ranking Member)"
@@ -612,7 +612,7 @@ District,Town,County,Member,Party,Email,Phone,Committees
 8,Whitney (Pukakon) Township,Penobscot County,Tracy L. Quint,R,Tracy.Quint@legislature.maine.gov,207-287-1400,Taxation (Member)
 11,Whitneyville,Washington County,Tiffany Strout,R,Tiffany.Strout@legislature.maine.gov,207-287-1400,Marine Resources (Member)
 30,Willimantic,Piscataquis County,James Lee White,R,James.White@legislature.maine.gov,207-287-1400,Transportation (Member)
-74,Wilton,Franklin County,Randall C. Hall,R,Randall.Hall@legislature.maine.gov,207-287-1400,
+74,Wilton,Franklin County,Randall C. Hall,R,Randall.Hall@legislature.maine.gov,207-287-1400,No committee assignments
 106,Windham (Part),Cumberland County,Barbara A. Bagshaw,R,Barbara.Bagshaw@legislature.maine.gov,207-287-1400,Education and Cultural Affairs (Member)
 107,Windham (Part),Cumberland County,Mark C. Cooper,R,Mark.Cooper@legislature.maine.gov,207-287-1400,"Agriculture, Conservation and Forestry (Member)"
 62,Windsor,Kennebec County,Katrina J. Smith,R,Katrina.Smith@legislature.maine.gov,207-287-1400,Ethics (Member); Joint Select Committee on Joint Rules (Member); Rules and Business of the House (Member)
