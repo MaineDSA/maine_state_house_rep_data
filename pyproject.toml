@@ -45,7 +45,7 @@ test-coverage = [
     {include-group = "test"},
 ]
 test = [
-    "pytest~=9.0.2",
+    "pytest~=9.0.3",
     "pytest-recording~=0.13.4",
     "pytest-xdist~=3.8.0",
 ]
