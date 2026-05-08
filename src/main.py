@@ -250,7 +250,6 @@ def save_to_csv(filename: str, records: list[tuple]) -> None:
             writer = csv.writer(csv_file)
             writer.writerow(headers)
             writer.writerows(records)
-        logger.info("CSV file '%s' has been created successfully.", filename)
     except OSError as e:
         logger.error("Failed to write CSV file '%s': %s", filename, e)
         raise
