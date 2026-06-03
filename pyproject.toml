@@ -18,7 +18,7 @@ maine_state_house_rep_data = "src.main:main"
 [build-system]
 requires = [
     "build>=1.5.0",
-    "setuptools>=82.0",
+    "setuptools>=82.0.1",
 ]
 build-backend = "setuptools.build_meta"
 
