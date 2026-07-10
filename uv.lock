@@ -78,15 +78,15 @@ sarif = [
 
 [[package]]
 name = "beautifulsoup4"
-version = "4.14.3"
+version = "4.15.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "soupsieve" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/c3/b0/1c6a16426d389813b48d95e26898aff79abbde42ad353958ad95cc8c9b21/beautifulsoup4-4.14.3.tar.gz", hash = "sha256:6292b1c5186d356bba669ef9f7f051757099565ad9ada5dd630bd9de5fa7fb86", size = 627737, upload-time = "2025-11-30T15:08:26.084Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/43/65/318323f98dbee45d42dff61d8f047181bc6f2268a9068cfad035a46be5af/beautifulsoup4-4.15.0.tar.gz", hash = "sha256:288e3ca7d54b06f2ac191970bc275c1939cb46d450b255bf6718b04aa37ab4f7", size = 632571, upload-time = "2026-06-07T16:44:20.453Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/1a/39/47f9197bdd44df24d67ac8893641e16f386c984a0619ef2ee4c51fbbc019/beautifulsoup4-4.14.3-py3-none-any.whl", hash = "sha256:0918bfe44902e6ad8d57732ba310582e98da931428d231a5ecb9e7c703a735bb", size = 107721, upload-time = "2025-11-30T15:08:24.087Z" },
+    { url = "https://files.pythonhosted.org/packages/88/c6/92fcd42f1ba33e1184263f25bfabf3d27c383410470f169e4b8163bf9c17/beautifulsoup4-4.15.0-py3-none-any.whl", hash = "sha256:d6f88de62e1d4e38ecb1077eb9724cd0eff29d2a08ca16a401e9b9e93f117cf9", size = 109924, upload-time = "2026-06-07T16:44:21.566Z" },
 ]
 
 [[package]]
@@ -443,8 +443,8 @@ types = [
 
 [package.metadata]
 requires-dist = [
-    { name = "beautifulsoup4", specifier = "~=4.14.3" },
-    { name = "tqdm", specifier = "~=4.67.3" },
+    { name = "beautifulsoup4", specifier = "~=4.15.0" },
+    { name = "tqdm", specifier = "~=4.68.3" },
     { name = "urllib3", specifier = "~=2.7.0" },
 ]
 
@@ -453,14 +453,14 @@ dev = [
     { name = "bandit", extras = ["sarif"], specifier = "==1.9.3" },
     { name = "mypy", specifier = "~=2.1.0" },
     { name = "pre-commit", specifier = "~=4.6.0" },
-    { name = "pytest", specifier = "~=9.0.3" },
+    { name = "pytest", specifier = "~=9.1.1" },
     { name = "pytest-cov", specifier = "~=7.1.0" },
     { name = "pytest-recording", specifier = "~=0.13.4" },
     { name = "pytest-xdist", specifier = "~=3.8.0" },
     { name = "ruff", specifier = "==0.15.1" },
     { name = "ssort", specifier = "==0.16.0" },
     { name = "types-beautifulsoup4", specifier = "~=4.12.0.20250516" },
-    { name = "types-tqdm", specifier = "~=4.67.3.20260518" },
+    { name = "types-tqdm", specifier = "~=4.68.0.20260608" },
 ]
 lint = [
     { name = "ruff", specifier = "==0.15.1" },
@@ -469,12 +469,12 @@ lint = [
 pre-commit = [{ name = "pre-commit", specifier = "~=4.6.0" }]
 security = [{ name = "bandit", extras = ["sarif"], specifier = "==1.9.3" }]
 test = [
-    { name = "pytest", specifier = "~=9.0.3" },
+    { name = "pytest", specifier = "~=9.1.1" },
     { name = "pytest-recording", specifier = "~=0.13.4" },
     { name = "pytest-xdist", specifier = "~=3.8.0" },
 ]
 test-coverage = [
-    { name = "pytest", specifier = "~=9.0.3" },
+    { name = "pytest", specifier = "~=9.1.1" },
     { name = "pytest-cov", specifier = "~=7.1.0" },
     { name = "pytest-recording", specifier = "~=0.13.4" },
     { name = "pytest-xdist", specifier = "~=3.8.0" },
@@ -482,7 +482,7 @@ test-coverage = [
 types = [
     { name = "mypy", specifier = "~=2.1.0" },
     { name = "types-beautifulsoup4", specifier = "~=4.12.0.20250516" },
-    { name = "types-tqdm", specifier = "~=4.67.3.20260518" },
+    { name = "types-tqdm", specifier = "~=4.68.0.20260608" },
 ]
 
 [[package]]
@@ -658,7 +658,7 @@ wheels = [
 
 [[package]]
 name = "pytest"
-version = "9.0.3"
+version = "9.1.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "colorama", marker = "sys_platform == 'win32'" },
@@ -669,9 +669,9 @@ dependencies = [
     { name = "pygments" },
     { name = "tomli", marker = "python_full_version < '3.11'" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/7d/0d/549bd94f1a0a402dc8cf64563a117c0f3765662e2e668477624baeec44d5/pytest-9.0.3.tar.gz", hash = "sha256:b86ada508af81d19edeb213c681b1d48246c1a91d304c6c81a427674c17eb91c", size = 1572165, upload-time = "2026-04-07T17:16:18.027Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/e4/47/b9efed96c114afcfa3c9d3fe98a76a1d14c74a9e266d397cf6eb64be5e01/pytest-9.1.1.tar.gz", hash = "sha256:1088fbde8f2b49d95a549a195707afa7a76a3ce9bcadc26b6d71f0ffda5fe313", size = 1636369, upload-time = "2026-06-19T10:58:32.857Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/d4/24/a372aaf5c9b7208e7112038812994107bc65a84cd00e0354a88c2c77a617/pytest-9.0.3-py3-none-any.whl", hash = "sha256:2c5efc453d45394fdd706ade797c0a81091eccd1d6e4bccfcd476e2b8e0ab5d9", size = 375249, upload-time = "2026-04-07T17:16:16.13Z" },
+    { url = "https://files.pythonhosted.org/packages/24/25/1de2678b631f5a49215c6c96fff41ba892b0a34df68d6d80292b1b48aa7f/pytest-9.1.1-py3-none-any.whl", hash = "sha256:37a86b45efb9a47a61a36449063e8e18d0cab3161329fc099eb21783169c4f0c", size = 386536, upload-time = "2026-06-19T10:58:31.347Z" },
 ]
 
 [[package]]
@@ -853,11 +853,11 @@ wheels = [
 
 [[package]]
 name = "soupsieve"
-version = "2.8.3"
+version = "2.8.4"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/7b/ae/2d9c981590ed9999a0d91755b47fc74f74de286b0f5cee14c9269041e6c4/soupsieve-2.8.3.tar.gz", hash = "sha256:3267f1eeea4251fb42728b6dfb746edc9acaffc4a45b27e19450b676586e8349", size = 118627, upload-time = "2026-01-20T04:27:02.457Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/47/2c/0a5f6f8ee0d5589e48c7640213ed5175d52cf540a06725b628cc1a45d6ce/soupsieve-2.8.4.tar.gz", hash = "sha256:e121fd02e975c695e4e9e8774a5ee35d74714b59307868dcc5319ad2d9e3328e", size = 121110, upload-time = "2026-05-24T13:55:57.154Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/46/2c/1462b1d0a634697ae9e55b3cecdcb64788e8b7d63f54d923fcd0bb140aed/soupsieve-2.8.3-py3-none-any.whl", hash = "sha256:ed64f2ba4eebeab06cc4962affce381647455978ffc1e36bb79a545b91f45a95", size = 37016, upload-time = "2026-01-20T04:27:01.012Z" },
+    { url = "https://files.pythonhosted.org/packages/5e/f5/0c41cb68dcae6b7de4fac4188a3a9589e21fb31df21ea3a2e888db95e6c9/soupsieve-2.8.4-py3-none-any.whl", hash = "sha256:e7e6b0769c8f51ed59acab6e994b00621096cfb1c640a7509295987388fbaf65", size = 37304, upload-time = "2026-05-24T13:55:55.406Z" },
 ]
 
 [[package]]
@@ -937,14 +937,14 @@ wheels = [
 
 [[package]]
 name = "tqdm"
-version = "4.67.3"
+version = "4.68.4"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "colorama", marker = "sys_platform == 'win32'" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/09/a9/6ba95a270c6f1fbcd8dac228323f2777d886cb206987444e4bce66338dd4/tqdm-4.67.3.tar.gz", hash = "sha256:7d825f03f89244ef73f1d4ce193cb1774a8179fd96f31d7e1dcde62092b960bb", size = 169598, upload-time = "2026-02-03T17:35:53.048Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/ae/5f/57ff8b434839e70dab45601284ea413e947a63799891b7553e5960a793a8/tqdm-4.68.4.tar.gz", hash = "sha256:19829c9673638f2a0b8617da4cdcb927e831cd88bcfcb6e78d42a4d1af131520", size = 792418, upload-time = "2026-07-07T09:58:18.369Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/16/e1/3079a9ff9b8e11b846c6ac5c8b5bfb7ff225eee721825310c91b3b50304f/tqdm-4.67.3-py3-none-any.whl", hash = "sha256:ee1e4c0e59148062281c49d80b25b67771a127c85fc9676d3be5f243206826bf", size = 78374, upload-time = "2026-02-03T17:35:50.982Z" },
+    { url = "https://files.pythonhosted.org/packages/22/2a/5e5e750890ada51017d18d0d4c30da696e5b5bd3180947729927628fc3cb/tqdm-4.68.4-py3-none-any.whl", hash = "sha256:5168118b2368f48c561afda8020fd79195b1bdb0bdf8086b88442c267a315dc2", size = 676612, upload-time = "2026-07-07T09:58:16.256Z" },
 ]
 
 [[package]]
@@ -985,14 +985,14 @@ wheels = [
 
 [[package]]
 name = "types-tqdm"
-version = "4.67.3.20260518"
+version = "4.68.0.20260608"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "types-requests" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/72/8c/8216f9030027dc96c776b0307cb06da9f3c3756ef00e98f1eb332e04a33c/types_tqdm-4.67.3.20260518.tar.gz", hash = "sha256:1f0cf61de56a76a454fbe2c6cc48d05e483470a38f8a9071893b923e7be47190", size = 18208, upload-time = "2026-05-18T06:08:04.417Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/dc/e0/3facccb1ff69970c73fca7a8028286c233d4c1312c475a65fb3d896f56d9/types_tqdm-4.68.0.20260608.tar.gz", hash = "sha256:e1dfddf8770fbc30ecaf95ae57c286397831235064308f7dfc2b1d6684a76107", size = 18470, upload-time = "2026-06-08T06:26:06.661Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/56/59/dbe84f71186645b821cf63f71fc746e1455fbce074594a86f486bee8dc89/types_tqdm-4.67.3.20260518-py3-none-any.whl", hash = "sha256:4969f5b97257c6d082c163d7a0715fffe7a83cb6863e108eac45c3fb82305a68", size = 24586, upload-time = "2026-05-18T06:08:03.568Z" },
+    { url = "https://files.pythonhosted.org/packages/53/e8/61d95bfd49d1609fb8e8c5e06f4a094183411988a6f448873f5de6602499/types_tqdm-4.68.0.20260608-py3-none-any.whl", hash = "sha256:450a6e7e9e9b604928968927c414b32970e40091213c4180e1ed470905b13eff", size = 24858, upload-time = "2026-06-08T06:26:05.741Z" },
 ]
 
 [[package]]
