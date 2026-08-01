@@ -8,7 +8,7 @@ authors = [{ "name" = "Ramona T", "email" = "ramona.t.dsa@pm.me" }]
 urls = { "GitHub" = "https://github.com/MaineDSA/maine_state_legislator_data" }
 dependencies = [
     "beautifulsoup4~=4.15.0",
-    "tqdm~=4.68.3",
+    "tqdm~=4.70.0",
     "urllib3~=2.7.0",
 ]
 
