@@ -32,7 +32,7 @@ dev = [
 ]
 lint = [
     "ruff==0.15.1",
-    "ssort==0.16.0",
+    "ssort==0.17.0",
 ]
 pre-commit = [
     "pre-commit~=4.6.1",
