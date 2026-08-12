@@ -9,10 +9,6 @@ updates:
     directory: /
     schedule:
       interval: monthly
-    ignore:
-      - dependency-name: bandit
-      - dependency-name: ruff
-      - dependency-name: ssort
 
   - package-ecosystem: github-actions
     directory: /
