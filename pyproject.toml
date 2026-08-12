@@ -38,7 +38,7 @@ pre-commit = [
     "pre-commit~=4.6.1",
 ]
 security = [
-    "bandit[sarif]==1.9.3",
+    "bandit[sarif]==1.9.4",
 ]
 test-coverage = [
     "pytest-cov~=7.1.0",
