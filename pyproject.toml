@@ -52,7 +52,7 @@ test = [
 types = [
     "ty~=0.0.70",
     "types-beautifulsoup4~=4.12.0.20250516",
-    "types-tqdm~=4.70.0.20260805"
+    "types-tqdm~=4.70.0.20260827"
 ]
 
 [tool]
