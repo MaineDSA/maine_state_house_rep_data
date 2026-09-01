@@ -50,7 +50,7 @@ test = [
     "pytest-xdist~=3.8.0",
 ]
 types = [
-    "ty~=0.0.70",
+    "ty~=0.0.75",
     "types-beautifulsoup4~=4.12.0.20250516",
     "types-tqdm~=4.70.0.20260827"
 ]
