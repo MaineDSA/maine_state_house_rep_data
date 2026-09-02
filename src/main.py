@@ -162,7 +162,7 @@ def parse_municipality_html(html_content: bytes) -> list[tuple[str, str, str, st
     table = soup.find("table", id="alphaTownTable") or soup.find("table")
     if not table or not isinstance(table, Tag):
         err_msg = "Could not find the data table"
-        raise Exception(err_msg)
+        raise TypeError(err_msg)
 
     tbody = table.find("tbody")
     assert isinstance(tbody, Tag)
