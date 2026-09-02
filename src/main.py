@@ -215,6 +215,7 @@ def collect_all_municipality_data(
 
 
 def resolve_unique_legislators(all_municipalities: list[tuple]) -> dict[str, str]:
+    """Determine unique legislators by their name and detail URL from all municipalities."""
     legislator_urls = defaultdict(list)
     for _, _, _, member, _, detail_url in all_municipalities:
         if member and detail_url:
@@ -224,6 +225,7 @@ def resolve_unique_legislators(all_municipalities: list[tuple]) -> dict[str, str
 
 
 def merge_legislator_data(all_municipalities: list[tuple[str, str, str, str, str, str]], legislator_details: dict[str, tuple[str, str, str]]) -> list[tuple]:
+    """Assemble municipality list with assigned legislators."""
     final_data = []
 
     for district, town, county, member, party, _ in all_municipalities:
@@ -256,6 +258,7 @@ def save_to_csv(filename: str, records: list[tuple]) -> None:
 
 
 def main() -> None:
+    """Hey, I just met you, and this is crazy, but I'm the main function, so call me maybe."""
     retry_strategy = Retry(total=3, backoff_factor=1, status_forcelist=[429, 500, 502, 503, 504], respect_retry_after_header=True)
     http = urllib3.PoolManager(retries=retry_strategy)
 
