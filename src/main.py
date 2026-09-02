@@ -229,9 +229,11 @@ def merge_legislator_data(all_municipalities: list[tuple[str, str, str, str, str
     final_data = []
 
     for district, town, county, member, party, _ in all_municipalities:
-        if member in legislator_details:
-            email, phone, committees = legislator_details[member]
-            final_data.append((district, town, county, member, party, email, phone, committees))
+        if member not in legislator_details:
+            continue
+
+        email, phone, committees = legislator_details[member]
+        final_data.append((district, town, county, member, party, email, phone, committees))
 
     return final_data
 
