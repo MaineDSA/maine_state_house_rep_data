@@ -135,7 +135,7 @@ def extract_legislator_info_from_row(row: Tag) -> tuple[str, str, str, str, str,
     link_tag = cols[3].find("a", href=True)
     detail_url = link_tag["href"] if link_tag else ""
 
-    logger.debug("Extracted data from row: %s", ", ".join((district, town, county, member_name, party, detail_url)))
+    logger.debug("Extracted data from row: %s", f"{district=}, {town=}, {county=}, {member_name=}, {party=}, {detail_url=}")
     return district, town, county, member_name, party, detail_url
 
 
@@ -162,7 +162,7 @@ def parse_municipality_html(html_content: bytes) -> list[tuple[str, str, str, st
     table = soup.find("table", id="alphaTownTable") or soup.find("table")
     if not table or not isinstance(table, Tag):
         err_msg = "Could not find the data table"
-        raise Exception(err_msg)
+        raise TypeError(err_msg)
 
     tbody = table.find("tbody")
     assert isinstance(tbody, Tag)
