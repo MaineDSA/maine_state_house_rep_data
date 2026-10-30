@@ -47,6 +47,7 @@ test-coverage = [
 test = [
     "pytest>=9.2",
     "pytest-recording>=0.14.0",
+    "pytest-urllib3>=0.2",
     "pytest-xdist>=3.8.0",
 ]
 types = [
