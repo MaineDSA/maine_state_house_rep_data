@@ -1,10 +1,14 @@
 from collections.abc import Generator
-from unittest.mock import MagicMock, patch
+from http import HTTPStatus
+from unittest.mock import patch
+from urllib.parse import urlunparse
 
 import pytest
 import urllib3
 from bs4 import BeautifulSoup, Tag
+from pytest_urllib3 import Urllib3Mock
 
+from src.legislature_urls import HouseURL
 from src.main import collect_all_municipality_data, extract_legislator_info_from_row, parse_committee_html, scrape_detailed_legislator_info
 
 
@@ -25,12 +29,6 @@ def html_content() -> bytes:
         </div>
     </div>
     """
-
-
-@pytest.fixture
-def mock_http() -> Generator[MagicMock, None, None]:
-    with patch("urllib3.PoolManager") as mocked:
-        yield mocked
 
 
 @pytest.fixture
@@ -92,27 +90,37 @@ def test_extract_legislator_info_malformed_row() -> None:
 
 
 @pytest.mark.usefixtures("mock_sleep")
-def test_scrape_detailed_info_success(mock_http: MagicMock) -> None:
-    mock_resp = MagicMock()
-    mock_resp.status = 200
-    mock_resp.data = """
-    <a href="mailto:rep.jane@legislature.maine.gov?subject=Hi">Email</a>
-    <a href="tel:207-555-0123">207-555-0123</a>
-    <div class="list-group-item"><h6>Judiciary</h6></div>
+def test_scrape_detailed_info_success(urllib3_mock: Urllib3Mock) -> None:
+    request_method = "GET"
+    request_path = "/path"
+    request_url = urlunparse(("https", HouseURL.StateLegislatureNetloc, request_path, "", "", ""))
+
+    expected_email = "rep.jane@legislature.maine.gov"
+    expected_phone = "207-555-0123"
+    expected_committee = "Judiciary"
+
+    response_text = f"""
+    <a href="mailto:{expected_email}?subject=Hi">Email</a>
+    <a href="tel:{expected_phone}">{expected_phone}</a>
+    <div class="list-group-item"><h6>{expected_committee}</h6></div>
     """
-    mock_http.request.return_value = mock_resp
 
-    email, phone, committees = scrape_detailed_legislator_info(mock_http, "/path")
+    urllib3_mock.add_response(method=request_method, url=request_url, text=response_text)
+    http = urllib3.PoolManager()
 
-    assert email == "rep.jane@legislature.maine.gov"
-    assert phone == "207-555-0123"
-    assert "Judiciary (Member)" in committees
+    email, phone, committees = scrape_detailed_legislator_info(http, request_path)
+
+    assert email == expected_email
+    assert phone == expected_phone
+    assert committees == f"{expected_committee} (Member)"
 
 
-def test_collect_all_municipality_data_error(mock_http: MagicMock) -> None:
-    mock_resp = MagicMock()
-    mock_resp.status = 404
-    mock_http.request.return_value = mock_resp
+def test_collect_all_municipality_data_error(urllib3_mock: Urllib3Mock) -> None:
+    request_method = "GET"
+    request_url = urlunparse(("https", HouseURL.StateLegislatureNetloc, HouseURL.MunicipalityListPath, "", "", ""))
 
-    with pytest.raises(urllib3.exceptions.HTTPError, match=f"Status: {mock_resp.status}"):
-        collect_all_municipality_data(mock_http)
+    urllib3_mock.add_response(method=request_method, url=request_url, status_code=HTTPStatus.NOT_FOUND)
+    http = urllib3.PoolManager()
+
+    with pytest.raises(urllib3.exceptions.HTTPError, match=f"Status: {HTTPStatus.NOT_FOUND}"):
+        collect_all_municipality_data(http)
