@@ -78,7 +78,7 @@ def scrape_detailed_legislator_info(http: urllib3.PoolManager, path: str, url: s
     full_url = urlunparse(("https", url, path, "", "", "committees"))
     response = http.request("GET", full_url)
 
-    if response.status != HTTP_OK:
+    if response.status is not HTTP_OK:
         return "", "", ""
 
     soup = BeautifulSoup(response.data, "html.parser")
@@ -207,7 +207,7 @@ def collect_all_municipality_data(
     logger.debug("Getting legislators list from URL: %s", url)
 
     response = http.request("GET", url)
-    if response.status != HTTP_OK:
+    if response.status is not HTTP_OK:
         err_msg = f"Status: {response.status}"
         raise HTTPError(err_msg)
 
