@@ -137,9 +137,7 @@ ignore = [
 
 [tool.pytest]
 addopts = ["-n", "auto", "--cov=src", "--no-cov-on-fail"]
-testpaths = [
-    "tests",
-]
+testpaths = ["tests"]
 
 [tool.coverage]
 
