@@ -8,7 +8,7 @@ authors = [{ "name" = "Ramona T", "email" = "ramona.t.dsa@pm.me" }]
 urls = { "GitHub" = "https://github.com/MaineDSA/maine_state_legislator_data" }
 dependencies = [
     "beautifulsoup4>=4.15",
-    "tqdm>=4.70",
+    "tqdm>=4.70.1",
     "urllib3>=2.8",
 ]
 
@@ -17,8 +17,8 @@ maine_state_house_rep_data = "src.main:main"
 
 [build-system]
 requires = [
-    "build>=1.6",
-    "setuptools>=84.0",
+    "build>=1.6.1",
+    "setuptools>=84.2.1",
 ]
 build-backend = "setuptools.build_meta"
 
@@ -35,7 +35,7 @@ lint = [
     "ssort~=0.19.0",
 ]
 pre-commit = [
-    "pre-commit>=4.6",
+    "pre-commit>=4.6.2",
 ]
 security = [
     "bandit[sarif]~=1.9.4",
@@ -52,8 +52,8 @@ test = [
 ]
 types = [
     "ty~=0.0.95",
-    "types-beautifulsoup4>=4.12",
-    "types-tqdm>=4.70"
+    "types-beautifulsoup4>=4.12.0.20250516",
+    "types-tqdm>=4.70.0.20260906"
 ]
 
 [tool]
@@ -137,9 +137,7 @@ ignore = [
 
 [tool.pytest]
 addopts = ["-n", "auto", "--cov=src", "--no-cov-on-fail"]
-testpaths = [
-    "tests",
-]
+testpaths = ["tests"]
 
 [tool.coverage]
 
