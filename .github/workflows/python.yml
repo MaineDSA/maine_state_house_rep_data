@@ -5,8 +5,10 @@ on:
     branches:
       - main
   pull_request:
+    branches:
+      - main
   schedule:
-    - cron: 0 0 * * 1
+    - cron: '20 7 * * 2'
   workflow_dispatch:
 
 permissions: read-all

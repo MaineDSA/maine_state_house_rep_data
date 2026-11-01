@@ -1,23 +1,22 @@
-# For most projects, this workflow file will not need changing; you simply need
-# to commit it to your repository.
-#
-name: "CodeQL"
+name: CodeQL
 
 on:
   push:
-    branches: ["main"]
+    branches:
+      - main
   pull_request:
-    # The branches below must be a subset of the branches above
-    branches: ["main"]
+    branches:
+      - main
   schedule:
-    - cron: "0 0 * * 1"
+    - cron: '20 7 * * 2'
+  workflow_dispatch:
 
 permissions: read-all
 
 jobs:
   analyze:
-    name: Analyze
     runs-on: ubuntu-latest
+
     permissions:
       actions: read
       contents: read
@@ -26,26 +25,22 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: ["python"]
+        language: [python]
 
     steps:
-      - name: Harden the runner (Audit all outbound calls)
-        uses: step-security/harden-runner@351661ca32ac09a36dc5ee2d536e3128f2a3c8ed # v2.11.0
+      - uses: step-security/harden-runner@46b06cea07f9e64621fdf066ba77ac6915163d43 # v2.11.0
         with:
+          disable-sudo: true
           egress-policy: audit
 
-      - name: Checkout repository
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2
+      - uses: github/codeql-action/init@9b3254085494b55a0f7c4c2b3d2d52cc712ce370
         with:
           languages: ${{ matrix.language }}
 
-      - name: Autobuild
-        uses: github/codeql-action/autobuild@2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2
+      - uses: github/codeql-action/autobuild@9b3254085494b55a0f7c4c2b3d2d52cc712ce370
 
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2
+      - uses: github/codeql-action/analyze@9b3254085494b55a0f7c4c2b3d2d52cc712ce370
         with:
-          category: "/language:${{matrix.language}}"
+          category: /language:${{matrix.language}}
