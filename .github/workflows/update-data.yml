@@ -30,10 +30,14 @@ jobs:
             **/pyproject.toml
             **/uv.lock
 
-      - run: uv sync --locked
+      - run: uv sync
+
+      - uses: stefanzweifel/git-auto-commit-action@d0b01107b5db882071f96de5dd4b54961ea93f4c
+        with:
+          commit_message: Update uv.lock
 
       - run: maine_state_house_rep_data
 
       - uses: stefanzweifel/git-auto-commit-action@d0b01107b5db882071f96de5dd4b54961ea93f4c
         with:
-          commit_message: Updated legislator data
+          commit_message: Update legislator data
