@@ -84,7 +84,10 @@ def scrape_detailed_legislator_info(http: urllib3.PoolManager, path: str, url: s
     soup = BeautifulSoup(response.data, "html.parser")
 
     email_tag = soup.find("a", href=re.compile(r"^mailto:"))
-    assert isinstance(email_tag, Tag)
+    if not isinstance(email_tag, Tag):
+        err_msg = "Mailto link is not a Tag object"
+        raise TypeError(err_msg)
+
     email = email_tag["href"].replace("mailto:", "").split("?")[0] if email_tag and isinstance(email_tag["href"], str) else ""
 
     phone_tag = soup.find("a", href=re.compile(r"^tel:"))
@@ -165,7 +168,9 @@ def parse_municipality_html(html_content: bytes) -> list[tuple[str, str, str, st
         raise TypeError(err_msg)
 
     tbody = table.find("tbody")
-    assert isinstance(tbody, Tag)
+    if not isinstance(tbody, Tag):
+        err_msg = "tbody is not a Tag object"
+        raise TypeError(err_msg)
 
     legislators = []
 
