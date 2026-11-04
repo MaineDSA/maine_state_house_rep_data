@@ -30,7 +30,7 @@ jobs:
             **/pyproject.toml
             **/uv.lock
 
-      - run: uv sync
+      - run: uv sync --locked
 
       - run: maine_state_house_rep_data
 
